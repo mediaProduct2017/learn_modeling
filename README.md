@@ -4,13 +4,13 @@
 
 1.1 分类算法(线性和非线性)
 
-encoder{
+encoder{  
         感知机（神经网络）  
         CNN  
         RNN  
         }
 
-概率{
+概率{  
         朴素贝叶斯（NB）  
         Logistic Regression（LR）  
         最大熵MEM（与LR同属于对数线性分类模型）  
@@ -20,19 +20,19 @@ encoder{
 
 决策树(ID3、CART、C4.5)
 
-assembly learning{
-        Boosting{
-            Gradient Boosting{
-                GBDT
+assembly learning{  
+        Boosting{  
+            Gradient Boosting{  
+                GBDT  
                 xgboost（传统GBDT以CART作为基分类器，xgboost还支持线性分类器，这个时候xgboost相当于带L1和L2正则化项的逻辑斯蒂回归（分类问题）或者线性回归（回归问题）；xgboost是Gradient Boosting的一种高效系统实现，并不是一种单一算法。）
-            }
-            AdaBoost
-        }   
-        Bagging{
-            随机森林
-        }
-        Stacking
-    }
+            }  
+            AdaBoost  
+        }     
+        Bagging{  
+            随机森林  
+        }  
+        Stacking  
+    }  
 
 1.2 概率图模型
 
