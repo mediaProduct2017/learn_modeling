@@ -18,7 +18,11 @@ encoder{
     
 支持向量机(SVM)
 
+[work/svm.txt](https://github.com/arfu2016/work/blob/master/svm.txt)
+
 决策树(ID3、CART、C4.5)
+
+[nlp/nlp_models/decision_tree/](https://github.com/arfu2016/nlp/tree/master/nlp_models/decision_tree)
 
 assembly learning{  
         Boosting{  
@@ -145,6 +149,8 @@ CRF++
 
 树回归
 
+[Imylu/work5/](https://github.com/arfu2016/Imylu/tree/master/work5)
+
 Ridge岭回归
 
 Lasso回归
@@ -154,10 +160,14 @@ Lasso回归
 2.1 聚类
 
 (1) 基础聚类  
-    K—means  
-    二分k-means   
-    K中值聚类  
-    GMM聚类  
+    
+K—means  
+    
+[nlp/nlp_models/kmeans/](https://github.com/arfu2016/nlp/tree/master/nlp_models/kmeans)   
+    
+二分k-means   
+K中值聚类  
+GMM聚类  
     
 (2) 层次聚类
 
@@ -183,6 +193,8 @@ FP-growth算法
 
 PCA算法
 
+[nlp/nlp_models/pca/](https://github.com/arfu2016/nlp/tree/master/nlp_models/pca)
+
 SVD算法
 
 LDA线性判别分析
@@ -202,4 +214,38 @@ bootstrapping用于关系抽取
 五、模型的内在机制和物理意义
 
 周志华arxiv论文：learning with interpretable structure from rnn
+
+六、统计
+
+t-test
+
+[work/statistics.txt](https://github.com/arfu2016/work/blob/master/statistics.txt)
+[t-test.txt](https://github.com/arfu2016/nlp/blob/master/nlp_models/algorithm/statistics/t-test.txt)
+
+anova
+
+[anova.txt](https://github.com/arfu2016/nlp/blob/master/nlp_models/algorithm/statistics/anova.txt)
+
+贝叶斯统计
+
+[beysian.txt](https://github.com/arfu2016/nlp/blob/master/nlp_models/algorithm/statistics/beysian.txt)
+
+pearson correlation
+
+[nlp/nlp_models/pearson/](https://github.com/arfu2016/nlp/tree/master/nlp_models/pearson)
+
+confusion_matrix
+
+[nlp/nlp_models/confusion_matrix/](https://github.com/arfu2016/nlp/tree/master/nlp_models/confusion_matrix)
+
+七、问题
+
+[25_fun_questions](https://github.com/arfu2016/nlp/tree/master/nlp_models/algorithm/machine_learning/questions)
+
+[feature_scaling](https://github.com/arfu2016/nlp/tree/master/nlp_models/feature_scaling)
+
+[gradient_descent](https://github.com/arfu2016/nlp/tree/master/nlp_models/gradient_descent)
+
+[lagrange_interpolation](https://github.com/arfu2016/nlp/tree/master/nlp_models/lagrange_interpolation)
+
 
