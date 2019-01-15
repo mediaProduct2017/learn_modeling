@@ -12,9 +12,13 @@ encoder{
 
 概率{  
         朴素贝叶斯（NB）  
-        Logistic Regression（LR）  
+        Logistic Regression（LR）
         最大熵MEM（与LR同属于对数线性分类模型）  
     }
+    
+[GLM与逻辑回归](https://www.jianshu.com/p/9c61629a1e7d)
+
+广义线性模型，y=ax+随机变量，y也是一个随机变量。如果y服从正态分布，那么E(y)可以用x的线性回归来表示。如果y服从伯努利分布（0或者1），那么E(y)可以用x的逻辑回归来表示。
     
 支持向量机(SVM)
 
