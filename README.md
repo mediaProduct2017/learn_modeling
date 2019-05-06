@@ -24,6 +24,18 @@ encoder{
 
 [work/svm.txt](https://github.com/arfu2016/work/blob/master/svm.txt)
 
+SVM:
+
+1. 损失函数与logistic regression的损失函数有类似之处：把log函数变成线性分段函数
+
+2. maximal margin and support vectors
+
+画两条平行线分别过两个类别的点，使得平行线之间的距离最大，两条平行线中间的线（middle line）就是分界线
+
+3. outlier的处理
+
+如果有个别outlier出现在了middle line的另一侧（和大多数同一类的点不在分界线的同一侧），可以用该outlier到middle line的距离做惩罚（或者用该outlier到本方margin line的距离做惩罚），之前乘一个惩罚因子。
+
 决策树(ID3、CART、C4.5)
 
 [nlp/nlp_models/decision_tree/](https://github.com/arfu2016/nlp/tree/master/nlp_models/decision_tree)
