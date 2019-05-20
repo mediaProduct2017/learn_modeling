@@ -19,8 +19,14 @@ encoder{
 [GLM与逻辑回归](https://www.jianshu.com/p/9c61629a1e7d)
 
 广义线性模型，y=ax+随机变量，y也是一个随机变量。如果y服从正态分布，那么E(y)可以用x的线性回归来表示。如果y服从伯努利分布（0或者1），那么E(y)可以用x的逻辑回归来表示。
+
+使用广义线性模型分析：为什么逻辑回归中的损失函数不用最小二乘估计而用极大似然估计（交叉熵）？
+
+逻辑回归情况下，使用极大似然估计得到的是凸函数，很容易得到全局最优，而使用最小二乘估计得到的是非凸函数，容易陷入局部最优。
     
 支持向量机(SVM)
+
+[work/svm.txt](https://github.com/mediaProduct2017/work/blob/master/svm.txt)
 
 [work/svm.txt](https://github.com/arfu2016/work/blob/master/svm.txt)
 
