@@ -1,5 +1,7 @@
 # learn_modeling
 
+mac air中有深度学习中的梯度问题.pdf
+
 一、监督算法：
 
 1.1 分类算法(线性和非线性)
@@ -46,19 +48,26 @@ SVM:
 
 [nlp/nlp_models/decision_tree/](https://github.com/arfu2016/nlp/tree/master/nlp_models/decision_tree)
 
+在决策树分叉之前，每次都可以算出一个信息熵。每次分叉之后，信息熵相比最初的信息熵减小（通过构建决策树，实现了熵减）的量就是当前的信息增益。一个叶子的概率（也就是一个样本分到某个类的概率）取决于这个叶子的信息增益，信息增益越大，概率越大。
+
+在sklearn.tree.DecisionTreeClassifier中，有两个方法，predict_log_proba(self, X)和predict_proba(self, X, check_input=True)都可以算出分类的概率，分类概率其实就是由叶子节点的信息增益算出来的。
+
 assembly learning{  
         Boosting{  
             Gradient Boosting{  
                 GBDT  
                 xgboost（传统GBDT以CART作为基分类器，xgboost还支持线性分类器，这个时候xgboost相当于带L1和L2正则化项的逻辑斯蒂回归（分类问题）或者线性回归（回归问题）；xgboost是Gradient Boosting的一种高效系统实现，并不是一种单一算法。）
-            }  
-            AdaBoost  
-        }     
-        Bagging{  
-            随机森林  
-        }  
-        Stacking  
-    }  
+
+​			lightGBM
+
+​            }  
+​            AdaBoost  
+​        }     
+​        Bagging{  
+​            随机森林  
+​        }  
+​        Stacking  
+​    }  
 
 1.2 概率图模型
 
@@ -152,7 +161,7 @@ CRF++
     U07:%x[0,0]/%x[1,0]/%x[2,0]
     U08:%x[-1,0]/%x[0,0]
     U09:%x[0,0]/%x[1,0] 
-
+    
     B
 
 从U00到U04表示，对于每个token，都要关注之前两个字符以及之后两个字符（是或的关系）对当前label的影响。而U05到U09关注的是多个字符（是且的关系）对当前label的影响。B关注的是上面的规则再加上之前的标记对当前标记的影响。从U00到U04，看某一个位置的影响，更类似边缘分布，从U05到U09，看两个或多个位置联合起来的影响（不只是某一个位置是什么，同时对其他位置有要求），更类似联合分布。
