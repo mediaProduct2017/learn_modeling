@@ -1,6 +1,6 @@
 # learn_modeling
 
-mac air中有深度学习中的梯度问题.pdf
+mac air在learn_modeling文件夹中有深度学习中的梯度问题.pdf
 
 一、监督算法：
 
@@ -77,6 +77,26 @@ assembly learning{
 
 ![bayes_markov](images/bayes_markov.png)
 
+ 不管NB还是LR，都是只关注当前状态的分类器，而不管之前或者之后的状态。NB可以认为是最简单的分类器，其中的各个特征是相互独立的（或者假定相互独立），在拟合特征系数的时候一个个特征依次来看就行。LR是最常用的分类器，对相互独立的特征有一定要求，但即使不独立，效果也是能有一定保证的，特别是加上regularization的话（比如L1 regularization），能自动干掉一些非独立的特征。
+
+[What is the difference between logistic regression and Naive Bayes?](https://www.quora.com/What-is-the-difference-between-logistic-regression-and-Naive-Bayes)
+
+Naive Bayes and Logistic Regression both train feature weights 𝑤𝑗for the linear decision function ∑𝑗𝑤𝑗𝑥𝑗(decide true if above 0, false if below). The difference is how you fit the weights from training data.
+
+In NB, you set each feature's weight independently, based on how much it correlates with the label. (Weights come out to be the features' log-likelihood ratios for the different classes.)
+
+In logistic regression, by contrast, you set all the weights together such that the linear decision function tends to be high for positive classes and low for negative classes. (Linear SVM's work the same, except for a technical tweak of what "tends to be high/low" means.)
+
+The difference between NB and LogReg happens when features are correlated. Say you have two features which are useful predictors -- they correlate with the labels -- but they themselves are repetitive, having extra correlation with each other as well. NB will give both of them strong weights, so their influence is double-counted. But logistic regression will compensate by weighting them lower.
+
+This is a way to view the probabilistic assumptions of the models; namely, Naive Bayes makes a conditional independence assumption, which is violated when you have correlated/repetitive features.
+
+One nice thing about NB is that training has no optimization step. You just calculate a count table for each feature and you're done with it -- it's single pass and trivially parallelizable every which way.
+
+One nice thing about LR is that you can be sloppy with feature engineering. You can throw in multiple variations of a feature without hurting the overall model (provided you're regularizing appropriately); but in NB this can be problematic.
+
+Ng and Jordan (2001) specifically address NB vs LR. One interesting finding is that NB can perform better when there's a low amount of training data. But LR should always outperform given enough data. http://ai.stanford.edu/~ang/papers/nips01-discriminativegenerative.pdf . Also, see the very nice exposition in Mitchell (2005): http://www.cs.cmu.edu/~tom/mlbook/NBayesLogReg.pdf
+
 分词
 
 python: jieba
@@ -96,6 +116,8 @@ naive bayes assumption: 分词后的句子的概率等于第一个词的概率�
 方法一：用word window来看，用词向量的bag of words向量来预测中间的词，看预测值和写出来的词是否一致，看写出来的词的概率有多高，如果很低，就是写错了。
 
 方法二：用贝叶斯法则，p(c|w) = p(w|c)乘以p(c)除以p(w)，对于任何的c，p(w) 都是定值。p(c)可以从正确语料中统计出来，p(w|c)需要从人工修改的语料中统计。
+
+方法三：用bert/roberta模型来做预测，因为有大厂预训练好的bert/roberta模型，所以可以用预训练模型来进行预测，这确实是bert/roberta模型可以实用的一个点。
 
 HMM
 
